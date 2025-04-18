@@ -1,0 +1,74 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Programming Rules for Eagle 3D Format Extension Plugin
+
+1. **Language**: TypeScript for core code, JavaScript for plugin implementation.
+
+2. **Module Structure**:
+   - `src/core`: Contains TypeScript modules for core functionality
+   - `src/plugin`: Contains the plugin's HTML, JavaScript, CSS (LESS), and resources
+
+3. **Build System**:
+   - Uses Rollup for bundling TypeScript core code
+   - Uses Gulp for building and processing plugin assets
+   - pnpm as package manager
+
+4. **Code Style**:
+   - Indentation: 4 spaces
+   - Semicolons required
+   - Class properties use private notation with # prefix
+   - Comments at end of lines, not before them
+
+5. **TypeScript Configuration**:
+   - Target: ESNext
+   - Module: ESNext
+   - Strict type checking enabled
+   - Requires type declarations
+
+6. **Plugin Architecture**:
+   - Core module extends Base class with Observer pattern
+   - Plugin interfaces with Eagle application API
+   - Viewer and thumbnail generation handled separately
+
+7. **3D Rendering**:
+   - Uses `@pecasha/3d-preview-core` for 3D model rendering
+   - Supports multiple 3D file formats (glb, gltf, fbx, etc.)
+   - Includes special handling for usdz/usdc files
+
+8. **Internationalization**:
+   - Uses i18next for localization
+   - Locales stored in JSON format in `_locales` directory
+   - Supports 8 languages with fallback to zh_CN
+
+9. **Asset Handling**:
+   - CSS written in LESS
+   - HTML supports injected CSS/JS during build
+   - External libraries stored in lib directory
+
+10. **Error Handling**:
+    - Error events emitted through Observer pattern
+    - Localized error messages shown to users
+
+11. **File Size Limits**:
+    - No explicit limits, but thumbnail generation has size optimization
+
+12. **Performance Considerations**:
+    - Uses devicePixelRatio for proper scaling
+    - Implements screenshot mode for thumbnails
+    - Optimizes assets in production builds
+
+13. **Dependencies**:
+    - External libraries for specific format support (KTX2, DRACO, etc.)
+    - No direct DOM manipulation frameworks (vanilla JS)
+
+14. **Build Modes**:
+    - Development mode with devTools enabled
+    - Production mode with minification
+    - Test thumbnail mode for testing
+
+15. **File Format Support**:
+    - 3D models: glb, gltf, fbx, vtk, obj, stl, dae, ply, spline, usdz, usdc, 3dm, 3mf
+    - HDRI environments: hdr, exr

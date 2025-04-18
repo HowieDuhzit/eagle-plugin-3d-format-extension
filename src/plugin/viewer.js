@@ -33,6 +33,9 @@ const renderer = new Core({
         if(suffix === "usdz" || suffix === "usdc") {
             const usdzBuffer = await fs.promises.readFile(filePath);
             await renderer.preview.loadFile(filePath, suffix, new File([usdzBuffer.buffer], suffix));
+        } else if(suffix === "vrm") {
+            const vrmBuffer = await fs.promises.readFile(filePath);
+            await renderer.preview.loadFile(filePath, "glb", new File([vrmBuffer.buffer], "glb"));
         } else {
             await renderer.preview.loadFile(filePath, suffix);
         }

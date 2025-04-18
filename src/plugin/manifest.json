@@ -22,7 +22,9 @@
         "hdr",
         "exr",
         "3dm",
-        "3mf"
+        "3mf",
+        "vrm",
+        "vroid"
     ],
     "fallbackLanguage": "zh_CN",
     "languages": [
@@ -36,7 +38,7 @@
         "zh_TW"
     ],
     "preview": {
-        "glb,gltf,fbx,vtk,obj,stl,dae,ply,spline,splinecode,usdz,usdc,3dm,3mf": {
+        "glb,gltf,fbx,vtk,obj,stl,dae,ply,spline,splinecode,usdz,usdc,3dm,3mf,vrm": {
             "thumbnail": {
                 "path": "thumbnail.js",
                 "allowZoom": false,

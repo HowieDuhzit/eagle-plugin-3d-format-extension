@@ -11,5 +11,13 @@ export default class extends Base {
     constructor(options: Partial<PreviewCoreOptions>) {
         super();
         this.#previewCore = new PreviewCore(options);
+        
+        // Add VRM-specific initialization if needed
+        this.#initVRMSupport();
+    }
+    
+    #initVRMSupport() {
+        // Add VRM-specific initialization code here if needed
+        // This might involve setting up VRM-specific loaders or handlers
     }
 }

@@ -29,6 +29,9 @@ module.exports = async ({ src, dest, item }) => {
                 const usdzBuffer = await fs.promises.readFile(src);
                 usdzFile = new File([usdzBuffer.buffer], suffix);
                 res = await core.preview.loadFile(src, suffix, usdzFile);
+            } else if(suffix === "vrm") {
+                const vrmBuffer = await fs.promises.readFile(src);
+                res = await core.preview.loadFile(src, "glb", new File([vrmBuffer.buffer], "glb"));
             } else {
                 res = await core.preview.loadFile(src, suffix);
             }

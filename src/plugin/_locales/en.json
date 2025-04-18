@@ -11,6 +11,13 @@
         },
         "core": {
             "textureMissing": "Texture Missing"
+        },
+        "vrm": {
+            "notValid": "Not a valid VRM file",
+            "versionUnsupported": "VRM version not supported"
         }
+    },
+    "vrm": {
+        "features": "VRM Features"
     }
 }
